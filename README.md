@@ -13,3 +13,4 @@ ADMIN_ID = ''
 ```
 pyTelegramBotAPI==4.5.1
 ```
+#### Or you can install them with command ```pip install -r requirements.txt```
