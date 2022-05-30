@@ -1,5 +1,7 @@
 # guard-bot
 The telegram bot which helps to control your group.
+### Bot is not full writen yet.⚠️
+
 
 # Getting start
 At first put you API_TOKEN and ADMIN_ID on config.py
