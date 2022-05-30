@@ -3,5 +3,5 @@ from config import bot
 import handlers
 
 
-if __name__=='__main___':
-    bot.infinity_polling()
+
+bot.infinity_polling()
