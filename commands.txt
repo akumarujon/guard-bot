@@ -1,0 +1,4 @@
+start - To start the bot.
+help - To send guide.
+kick - To kick chat member(by replying)
+ro - Not to let member write.
