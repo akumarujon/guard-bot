@@ -1,4 +1,3 @@
-import time
 from config import BOT_ID, BOT_TOKEN, bot
 from telebot.types import Message
 from utils import is_msg_from_admin, is_bot_admin
@@ -25,5 +24,14 @@ def ban_member(msg: Message):
     if is_msg_from_admin(msg.chat.id, msg.from_user.id,bot):
         bot.ban_chat_member(msg.chat.id, msg.reply_to_message.from_user.id)
         bot.send_message(msg.chat.id,f"[{msg.reply_to_message.from_user.first_name}](tg://user?id={msg.reply_to_message.from_user.id}) ban qilindi.")
+    else:
+        bot.send_message(msg.chat.id,"Faqat adminlar bu buyruqni ishlata olishadi.")
+
+# RO
+@bot.message_handler(commands='ro')
+def ro_chat_member(msg: Message):
+    if is_msg_from_admin(msg.chat.id, msg.from_user.id,bot):
+        bot.restrict_chat_member(msg.chat.id, msg.reply_to_message.from_user.id,can_send_messages=False,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
+        bot.send_message(msg.chat.id,f"[{msg.reply_to_message.from_user.first_name}](tg://user?id={msg.reply_to_message.from_user.id}) ro qilindi.")
     else:
         bot.send_message(msg.chat.id,"Faqat adminlar bu buyruqni ishlata olishadi.")
