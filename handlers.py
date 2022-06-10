@@ -35,3 +35,12 @@ def ro_chat_member(msg: Message):
         bot.send_message(msg.chat.id,f"[{msg.reply_to_message.from_user.first_name}](tg://user?id={msg.reply_to_message.from_user.id}) ro qilindi.")
     else:
         bot.send_message(msg.chat.id,"Faqat adminlar bu buyruqni ishlata olishadi.")
+
+# un RO
+@bot.message_handler(commands=['unro'])
+def unro_chat_membet(msg: Message):
+    if is_msg_from_admin:
+        bot.restrict_chat_member(msg.chat.id,msg.reply_to_message.from_user.id,can_send_messages=True,can_send_media_messages=True,can_send_other_messages=True,can_add_web_page_previews=True)
+        bot.send_message(msg.chat.id,f"[{msg.reply_to_message.from_user.first_name}](tg://user?id={msg.reply_to_message.from_user.id}) RO'dan chiqarildi.")
+    else:
+        bot.send_message(msg.chat.id,"Faqat adminlar bu buyruqni ishlata olishadi.")
