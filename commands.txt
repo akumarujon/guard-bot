@@ -1,4 +1,5 @@
 start - To start the bot. (Added✅)
 help - To send guide. (Added✅)
 kick - To kick chat member(by replying) (Added✅)
-ro - Not to let member write.
+ro - Not to let member write. (Added✅)
+unro - Let chat member to act. (Added✅)
